@@ -95,61 +95,7 @@ class Shape:
             # print(f'{height}x{width} = {height*width}')
             area += height*width        
         ##### Vertical Lines Area #####
-
-
-        # lastXList = []
-        # firstLine =1 # accounts for the line on the edge
-        # firstLineFound = 1
-        # for index in range(0,len(sortedList)-1):
-        #     # list the x indexes in this range
-        #     xList = set([])
-        #     sliceList = set([])
-        #     height = sortedList[index+1] - sortedList[index] -1 
-        #     firstLine = 0            
-        #     for pointIndex in range(0,len(self.points)-1):
-        #         minP = min(self.points[pointIndex].y,self.points[pointIndex+1].y)
-        #         maxP = max(self.points[pointIndex].y,self.points[pointIndex+1].y)
-        #         # if vert line and 
-        #         if maxP != minP and sortedList[index] in range(minP,maxP+1) and sortedList[index+1] in range(minP,maxP+1):
-        #             #vert line found, add x to the list
-        #             xList.add(self.points[pointIndex].x)
-        #             sliceList.add(self.points[pointIndex].x)
-        #         elif sortedList[index+1] == minP and minP == maxP: # store hoz length
-        #             # finalLineLength = max(self.points[pointIndex].x,self.points[pointIndex+1].x) - min(self.points[pointIndex].x,self.points[pointIndex+1].x) +1
-        #             sliceList.add(self.points[pointIndex].x)
-        #             sliceList.add(self.points[pointIndex+1].x)
-        #     sortedXList = sorted(xList) 
-
-        #     if(len(sortedXList) )%2 ==1:
-        #         print("***************************************************ODD LEN") 
-        #     width = 0
-        #     print(sortedXList)
-        #     for pointIndex in range(0,len(sortedXList),2):
-        #         width += sortedXList[pointIndex+1] - sortedXList[pointIndex] + 1
-            
-        #     slortedSiceList = sorted(sliceList)
-        #     print(slortedSiceList)
-        #     sliceArea = 0
-        #     for pointIndex in range(0,len(slortedSiceList)-1):
-        #         if slortedSiceList[pointIndex] +1 == slortedSiceList[pointIndex+1]:
-        #             print(f'Adjacent points {slortedSiceList[pointIndex]}:{slortedSiceList[pointIndex+1]}')
-        #             sliceArea+=1 # adjacent lines just add one
-        #         elif self.contains(slortedSiceList[pointIndex]+1,sortedList[index]):
-        #             #fill to the next point, but don't include it
-        #             print(f'Fill Line {slortedSiceList[pointIndex]}:{slortedSiceList[pointIndex+1]}')
-        #             sliceArea += slortedSiceList[pointIndex+1] - slortedSiceList[pointIndex]
-        #         else: #not in the shape, just add the line
-        #             print(f'Just the line {slortedSiceList[pointIndex]}:{slortedSiceList[pointIndex+1]}')
-        #             sliceArea+=1
-        #     sliceArea+=1 # add for the last line
-                
-
-        #     area += height*width +sliceArea#+ lineLength#+ max(bigSet) - min(bigSet) +1
-        #     print(f'{height}x{width} = {height*width} + {sliceArea}')#+ {lineLength}')
-        
-        # #TODO find a way to account for where the vertical lines are
-
-        return area #+ finalLineLength
+        return area 
 x =0
 y =0
 myShape = Shape()
