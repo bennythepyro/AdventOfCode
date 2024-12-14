@@ -26,36 +26,6 @@ stoneLinks[0] = [1]
 stoneCountBefore: Dict[int, int] = dict()
 stoneCountAfter: Dict[int, int] = dict()
 
-
-# def blink(count: int, limit: int, input: int):
-#     global stoneLinks
-#     global part1
-
-#     part1 += 1
-#     if count >= limit:
-#         return
-
-#     if input == 0:
-#         stoneLinks[0] = [1]
-#         blink(count=count + 1, limit=limit, input=1)
-#         return
-
-#     stringLength = len(str(input))
-#     if stringLength % 2 == 0:
-#         thisStr = str(input)
-#         stoneLinks[input] = [
-#             int(thisStr[: int(stringLength / 2)]),
-#             int(thisStr[int(stringLength / 2) :]),
-#         ]
-#         blink(count=count + 1, limit=limit, input=stoneLinks[input][0])
-#         blink(count=count + 1, limit=limit, input=stoneLinks[input][1])
-#         return
-
-#     # no other rules apply, multiply
-#     stoneLinks[input] = [input * 2024]
-#     blink(count=count + 1, limit=limit, input=input * 2024)
-
-
 def addToDict(stoneLinks: Dict[int, List[int]], number: int):
     if number in stoneLinks.keys():
         return
@@ -76,7 +46,7 @@ for numberStr in strs:
     addToDict(stoneLinks=stoneLinks, number=number)
     stoneCountBefore[number] = stoneCountBefore.get(number, 0) + 1
 
-for blinCount in range(0,1000):
+for blinCount in range(0,25):
     for number, count in stoneCountBefore.items():
         # do the link calcs if needed
         addToDict(stoneLinks=stoneLinks, number=number)
@@ -87,10 +57,6 @@ for blinCount in range(0,1000):
     stoneCountBefore = stoneCountAfter
     stoneCountAfter = dict()
 
-# test = "123456"
-# stringLength = len(test)
-# print(f"{int(test[: int(stringLength / 2)])}")
-# print(f"{int(test[int(stringLength / 2) :])}")
 
 for number, count in stoneCountBefore.items():
     part1+=count
